@@ -1,0 +1,28 @@
+  <!-- Encabezado de la página -->
+  <router-outlet></router-outlet>
+  <header class="jumbotron jumbotron-fluid bg-success text-white text-center">
+    <div class="container">
+      <h1 class="display-4">¡Bienvenidos a la Frutería FRUVER CUMBAL!</h1>
+      <p class="lead">Ofrecemos productos frescos y de calidad</p>
+      <a [routerLink]="['/listar-productos']" class="btn btn-light btn-lg">Conoce nuestros productos</a>
+    </div>
+  </header>
+
+  <!-- Sección de información sobre la tienda -->
+  <section class="container my-5">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Sobre nosotros</h2>
+        <p>Somos una frutería comprometida en brindar los mejores productos frescos a nuestros clientes. Nuestro objetivo es ofrecer una amplia variedad de frutas y verduras de temporada.</p>
+      </div>
+      <div class="col-md-6">
+        <h2>Nuestra misión</h2>
+        <p>Nuestra misión es promover un estilo de vida saludable a través de una alimentación balanceada y nutritiva. Trabajamos directamente con agricultores locales para asegurar la frescura y calidad de nuestros productos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer class="bg-light text-center py-4">
+    <p>&copy; 2023 Frutería FRUVER CUMBAL. Todos los derechos reservados.</p>
+  </footer>

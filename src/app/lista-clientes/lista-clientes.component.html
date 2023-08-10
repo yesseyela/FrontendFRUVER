@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <form class="form-inline">
+          <fieldset class="form-group col-sm-11"></fieldset>
+          <fieldset class="form-group col-sm-1">
+            <a class="btn btn-primary" [routerLink]="['/clientes/agregar']">Nuevo cliente</a>
+          </fieldset>
+        </form>
+        <br>
+        <table class="table table-striped">
+          <thead>
+            <tr class="row">
+              <th class="col-sm-1"> ID </th>
+              <th class="col-sm-3"> IDENTIFICACIÓN </th>
+              <th class="col-sm-3"> NOMBRE </th>
+              <th class="col-sm-3"> APELLIDO </th>
+              <th class="col-sm-1"> ACCIONES</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cliente of clientes | async" class="row">
+              <td class="col-sm-1"><i>{{ cliente.idCliente }}</i></td>
+              <td class="col-sm-3"><i>{{ cliente.identificacion }}</i></td>
+              <td class="col-sm-3"><i>{{ cliente.nombre }}</i></td>
+              <td class="col-sm-3"><i>{{ cliente.apellido }}</i></td>
+              <td class="col-sm-1">
+                <fieldset class="form-group col-sm-1">
+                  <a class="btn btn-info" [routerLink]="['/clientes/editar/', cliente.idCliente]">Editar</a>
+                </fieldset>
+              </td>
+              <td class="col-sm-1">
+                <fieldset class="form-group col-sm-1">
+                  <a class="btn btn-danger" (click)="borrarCliente(cliente.idCliente)">Borrar</a>
+                </fieldset>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

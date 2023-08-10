@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-sm-12">
+      <form (ngSubmit)="onSubmit()" #clienteForm="ngForm">
+        <fieldset class="form-group">
+          <div class="col-sm-12">
+            <label class="control-label" for="identificacion">Identificación</label>
+            <input type="text" class="form-control" required [(ngModel)]="cliente.identificacion" name="identificacion">
+          </div>
+        </fieldset>
+        <fieldset class="form-group">
+          <div class="col-sm-12">
+            <label class="control-label" for="nombre">Nombre</label>
+            <input type="text" class="form-control" required [(ngModel)]="cliente.nombre" name="nombre">
+          </div>
+        </fieldset>
+        <fieldset class="form-group">
+          <div class="col-sm-12">
+            <label class="control-label" for="apellido">Apellido</label>
+            <input type="text" class="form-control" required [(ngModel)]="cliente.apellido" name="apellido">
+          </div>
+        </fieldset>
+        <fieldset class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary" [disabled]="!clienteForm.form.valid">ENVIAR</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  
