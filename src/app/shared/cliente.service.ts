@@ -15,6 +15,11 @@ constructor(private http: HttpClient) { }
     return this.http.get<ClienteModel[]>(`${this.BASE_URL}/clientes`);
   }
 
+  //trae un producto por id
+  obtenerCliente(idCliente: number) {
+    return this.http.get<ClienteModel[]>(`${this.BASE_URL}/clientes/${idCliente}`);
+  }
+
   agregarCliente(cliente: ClienteModel) {
     return this.http.post(`${this.BASE_URL}/clientes`, cliente);
   }

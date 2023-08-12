@@ -3,6 +3,7 @@ export class ProductoModel {
         public idProducto: number, 
         public nombre: string, 
         public detalle: string, 
-        public precio: number, 
-        public imagen: string){    }
+        public precio: number,
+        public imagen: string
+        ){    }
 }

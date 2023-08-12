@@ -3,7 +3,7 @@
       <div class="col-sm-12">
         <form class="form-inline">
           <fieldset class="form-group col-sm-11"></fieldset>
-          <fieldset class="form-group col-sm-1">
+          <fieldset class="form-group col-sm-11">
             <a class="btn btn-primary" [routerLink]="['/clientes/agregar']">Nuevo cliente</a>
           </fieldset>
         </form>
@@ -24,11 +24,7 @@
               <td class="col-sm-3"><i>{{ cliente.identificacion }}</i></td>
               <td class="col-sm-3"><i>{{ cliente.nombre }}</i></td>
               <td class="col-sm-3"><i>{{ cliente.apellido }}</i></td>
-              <td class="col-sm-1">
-                <fieldset class="form-group col-sm-1">
-                  <a class="btn btn-info" [routerLink]="['/clientes/editar/', cliente.idCliente]">Editar</a>
-                </fieldset>
-              </td>
+
               <td class="col-sm-1">
                 <fieldset class="form-group col-sm-1">
                   <a class="btn btn-danger" (click)="borrarCliente(cliente.idCliente)">Borrar</a>

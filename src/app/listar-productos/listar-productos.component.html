@@ -1,45 +1,27 @@
 <router-outlet></router-outlet>
-<!--Vamos a personalizar y esquematizar-->
 <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <form class="form-inline">
-          <fieldset class="form-group col-sm-11"></fieldset>
-          <fieldset class="form-group col-sm-1">
-            <a class="btn btn-primary" [routerLink]="['/productos/agregar']">Nuevo producto</a>
-            <!--Roter links, crea links para navegar entre diferentes rutas de angular-->
-          </fieldset>
-        </form>
-        <br>
-        <table class="table table-striped">
-            <thead>
-              <tr class="row">
-                <th class="col-sm-1"> ID </th>
-                <th class="col-sm-3"> NOMBRE </th>
-                <th class="col-sm-3"> DETALLE </th>
-                <th class="col-sm-2"> PRECIO </th>
-                <th class="col-sm-1"> ACCIONES</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let producto of productos | async" class="row">
-                <td class="col-sm-1"><i>{{ producto.idProducto }}</i></td>
-                <td class="col-sm-3"><i>{{ producto.nombre }}</i></td>
-                <td class="col-sm-3"><i>{{ producto.detalle }}</i></td>
-                <td class="col-sm-2"><i>{{ producto.precio }}</i></td>
-                <td class="col-sm-1">
-                  <fieldset class="form-group col-sm-1">
-                    <a class="btn btn-info" [routerLink]="['/productos/editar/', producto.idProducto]">Editar</a>
-                  </fieldset>
-                </td>
-                <td class="col-sm-1">
-                  <fieldset class="form-group col-sm-1">
-                    <a class="btn btn-danger" (click)="borrarProducto(producto.idProducto)">Borrar</a>
-                  </fieldset>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+  <div class="row">
+    <div class="col-sm-12">
+      <form class="form-inline">
+        <fieldset class="form-group col-sm-11"></fieldset>
+        <fieldset class="form-group col-sm-11">
+          <a class="btn btn-primary" [routerLink]="['/productos/agregar']">Nuevo producto</a>
+        </fieldset>
+      </form>
+      <br>
+      <div class="row">
+        <div *ngFor="let producto of productos | async" class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ producto.nombre }}</h5>
+              <p class="card-text">{{ producto.detalle }}</p>
+              <p class="card-text">{{ producto.precio }}</p>
+              <a class="btn btn-info" [routerLink]="['/productos/editar/', producto.idProducto]">Editar</a>
+              <a class="btn btn-danger" (click)="borrarProducto(producto.idProducto)">Borrar</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
 </div>

@@ -21,18 +21,18 @@ export class EditarClienteComponent implements OnInit{
 
   ngOnInit() {
     //cuando inicie el componente
-    this.idCliente = this.route.snapshot.params['idProducto'];
-    console.log('El id del producto es: ' + this.idCliente);
+    this.idCliente = this.route.snapshot.params['idCliente'];
+    console.log('El id del cliente es: ' + this.idCliente);
     if(this.idCliente) {
       //editar
-      this.clienteService.obtenerClientes().subscribe( data => {
+      this.clienteService.obtenerCliente(parseInt(this.idCliente)).subscribe( data => {
         this.cliente = data [0];
       }, error => {
         console.log(error);
       });
      } else {
         //agregar
-        console.log('nuevo producto');
+        console.log('nuevo cliente');
       }
     }
 

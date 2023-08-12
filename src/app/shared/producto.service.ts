@@ -14,8 +14,9 @@ export class ProductoService {
     return this.http.get<ProductoModel[]>(`${this.BASE_URL}/productos`);
   }
 
+  //trae un producto por id
   obtenerProducto(idProducto: number) {
-    return this.http.get<ProductoModel>(`${this.BASE_URL}/productos/${idProducto}`);
+    return this.http.get<ProductoModel[]>(`${this.BASE_URL}/productos/${idProducto}`);
   }
 
   agregarProducto(producto: ProductoModel) {

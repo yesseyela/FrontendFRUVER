@@ -11,7 +11,7 @@ import { ProductoModel } from '../shared/producto.model';
 export class EditarProductosComponent  implements OnInit{
   //variable que traiga el id del producto
   idProducto= '';
-  producto = new ProductoModel( 0, "", "", 0,"");
+  producto = new ProductoModel( 0, "", "", 0, "");
 
   constructor(
     private productoService: ProductoService, 
@@ -26,7 +26,7 @@ export class EditarProductosComponent  implements OnInit{
     if(this.idProducto) {
       //editar
       this.productoService.obtenerProducto(parseInt(this.idProducto)).subscribe( data => {
-        this.producto = data;
+        this.producto = data [0];
       }, error => {
         console.log(error);
       });

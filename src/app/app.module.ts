@@ -19,7 +19,7 @@ import { ClienteService } from './shared/cliente.service';
     EditarProductosComponent,
     InicioComponent,
     ListaClientesComponent,
-    EditarClienteComponent
+    EditarClienteComponent,
   ],
   imports: [
     BrowserModule,
